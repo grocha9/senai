@@ -16,7 +16,7 @@ public class AlunoService {
     }
 
 
-    public List<Aluno> buscarAlunos() {
+    public List<Aluno> buscarTodosAlunos() {
         return repository.findAll();
     }
 
