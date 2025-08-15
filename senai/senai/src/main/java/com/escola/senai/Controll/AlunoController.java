@@ -3,12 +3,13 @@ package com.escola.senai.Controll;
 import com.escola.senai.Interace.AlunoRepository;
 import com.escola.senai.Models.Aluno;
 import com.escola.senai.Service.AlunoService;
+import jakarta.persistence.Id;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/alunos")
+@RequestMapping("/{alunos}")
 public class AlunoController {
     private final AlunoService alunoService;
 
@@ -33,8 +34,8 @@ public class AlunoController {
     }
 
 
-    @DeleteMapping
-    public void excluirAluno(Long id){
+    @DeleteMapping("/{id}")
+    public void excluirAluno(@PathVariable Long id){
         alunoService.deletarAluno(id);
     }
 
